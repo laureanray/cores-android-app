@@ -3,55 +3,66 @@ package com.laureanray.CoRES;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class SelectDayActivity extends AppCompatActivity {
 
-
+    String selected;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_day);
 
-        Button day1 = findViewById(R.id.day1);
-        Button day2 = findViewById(R.id.day2);
-        Button day3 = findViewById(R.id.day3);
-        Button day4 = findViewById(R.id.day4);
-
-
-        day1.setOnClickListener(new View.OnClickListener() {
+        RadioGroup rgroup = findViewById(R.id.selectDayGroup);
+        final Button selectButton = findViewById(R.id.selectBtn);
+        rgroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SelectDayActivity.this, Day1Select.class);
-                startActivity(intent);
-            }
-        });
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton checkedRadioButton = group.findViewById(checkedId);
 
-        day2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SelectDayActivity.this, Day2Select.class);
-                startActivity(intent);
-            }
-        });
+                boolean isChecked = checkedRadioButton.isChecked();
 
-        day3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SelectDayActivity.this, Day3Select.class);
-                startActivity(intent);
+                if(isChecked){
+                    selected = checkedRadioButton.getText().toString();
+                    Log.d("Radio Button", checkedRadioButton.getText().toString());
+                    selectButton.animate().alpha(1.0f).translationY(25).setDuration(300);
+                }
             }
         });
 
 
-        day4.setOnClickListener(new View.OnClickListener() {
+        selectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SelectDayActivity.this, Day4Select.class);
-                startActivity(intent);
+                Intent intent;
+                finish();
+                Log.d("Selected", selected);
+                if(selected.equals("Day 1")){
+                    intent = new Intent(SelectDayActivity.this, Day1Select.class);
+                    startActivity(intent);
+                    Log.d("Selected", "Is this called?");
+
+                }else if(selected == "Day 2"){
+                    intent = new Intent(SelectDayActivity.this, Day2Select.class);
+                    startActivity(intent);
+
+                }else if(selected == "Day 3"){
+                    intent = new Intent(SelectDayActivity.this, Day3Select.class);
+                    startActivity(intent);
+
+                }else if(selected == "Day 4") {
+                    intent = new Intent(SelectDayActivity.this, Day4Select.class);
+                    startActivity(intent);
+
+                }
+
             }
         });
+
     }
 
     @Override

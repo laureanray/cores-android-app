@@ -212,15 +212,12 @@ public class ScanActivity extends AppCompatActivity {
                             final TextView school = findViewById(R.id.school);
                             final TextView seminarOrWorkshop = findViewById(R.id.seminarOrWorkshopWelcome);
                             final TextView welcomeText = findViewById(R.id.welcomeText);
-
+                            final TextView errPrompt = findViewById(R.id.errPrompt);
+                            final TextView bigError = findViewById(R.id.bigError);
                             // response
                             Log.d("Response", response);
                             Gson gson = new Gson();
                             final JsonObject jsonObject = gson.fromJson(response, JsonObject.class);
-                            Log.d("STATUS", jsonObject.get("status").toString());
-
-                            Log.d("DATA", jsonObject.get("firstName").toString());
-
                             if(Integer.parseInt(jsonObject.get("status").toString()) == 200){
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -232,12 +229,56 @@ public class ScanActivity extends AppCompatActivity {
                                         school.setText(jsonObject.get("school").toString().replaceAll("\"", ""));
                                         seminarOrWorkshop.setText(toScan);
                                         // ANIMATOION
+                                        bigError.setText("OK");
+                                        bigError.animate().alpha(1.0f).translationY(-20).setDuration(300);
+
                                         name.animate().alpha(1.0f).setDuration(500);
                                         school.animate().alpha(1.0f).setDuration(500);
                                         seminarOrWorkshop.animate().alpha(1.0f).setDuration(500);
                                         welcomeText.animate().alpha(1.0f).setDuration(500);
                                     }
                                 });
+                            }else if(Integer.parseInt(jsonObject.get("status").toString()) == 100 || Integer.parseInt(jsonObject.get("status").toString()) == 101){
+//                                name.setText("You are not registered to this workshop.");
+//                                name.animate().alpha(1.0f).setDuration(50             0);
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        errPrompt.setText("You are not registered to this seminar/workshop. Please check your schedule.");
+                                        bigError.setText("ERROR!");
+                                        bigError.animate().alpha(1.0f).translationY(-20).setDuration(300);
+                                        errPrompt.animate().alpha(1.0f).translationY(-40).setDuration(300);
+                                        Toast toast = Toast.makeText(ScanActivity.this, "Please proceed to Information Desk", Toast.LENGTH_LONG);
+                                        toast.show();
+
+                                    }
+                                });
+                            }else if(Integer.parseInt(jsonObject.get("status").toString()) == 201){
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        errPrompt.setText("Ok ka na wag kang epal.");
+                                        bigError.setText("WARN");
+                                        bigError.animate().alpha(1.0f).translationY(-20).setDuration(300);
+                                        errPrompt.animate().alpha(1.0f).translationY(-40).setDuration(300);
+
+                                    }
+                                });
+                            }else if(Integer.parseInt(jsonObject.get("status").toString()) == 404){
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        errPrompt.setText("Not found. Please proceed to information desk. ");
+                                        bigError.setText("404.");
+                                        bigError.animate().alpha(1.0f).translationY(-20).setDuration(300);
+                                        errPrompt.animate().alpha(1.0f).translationY(-40).setDuration(300);
+                                        Toast toast = Toast.makeText(ScanActivity.this, "Please proceed to Information Desk", Toast.LENGTH_LONG);
+                                        toast.show();
+
+                                    }
+                                });
+                            }else{
+
                             }
 //                            if (jsonObject.get("status").toString().equals("\"success\"")) {
 //

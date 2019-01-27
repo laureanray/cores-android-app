@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     tools:context="com.laureanray.CoRES.SelectDayActivity">
 
+    <Button
+        android:id="@+id/selectBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="24dp"
+        android:alpha="0"
+        android:background="@drawable/rounded_button"
+        android:clickable="false"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingVertical="14dp"
+        android:text="Select"
+        android:textColor="@color/light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
@@ -22,76 +40,92 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-    android:id="@+id/day1"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
-    android:layout_marginTop="24dp"
-    android:layout_marginEnd="24dp"
-    android:background="@drawable/rounded_button"
-    android:fontFamily="@font/montserrat_bold"
-    android:paddingHorizontal="30dp"
-    android:paddingVertical="15dp"
-    android:text="Day 1"
-    android:textColor="@color/light"
-    android:textSize="24dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/day2"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/rounded_button"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/montserrat_bold"
-        android:paddingHorizontal="30dp"
-        android:paddingVertical="15dp"
-        android:text="Day 2"
-        android:textColor="@color/light"
-        android:textSize="24dp"
+        android:padding="5dp"
+        android:text="Server Status"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/day1" />
+        app:layout_constraintTop_toBottomOf="@+id/selectDayGroup" />
 
+    <RadioGroup
+        android:id="@+id/selectDayGroup"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0">
 
-    <Button
-        android:id="@+id/day3"
-        android:layout_width="0dp"
+        <RadioButton
+            android:id="@+id/day1"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Day 1"
+            android:textColor="#272727"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/day2"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Day 2"
+            android:textColor="#272727"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/day3"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Day 3"
+            android:textColor="#272727"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/day4"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:text="Day 4"
+            android:textColor="#272727"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/ipStatus"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/montserrat_bold"
-        android:paddingHorizontal="30dp"
-        android:paddingVertical="15dp"
-        android:text="Day 3"
-        android:textColor="@color/light"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:text="IP: 192.168.0.15"
+        android:textSize="18sp"
+        android:fontFamily="@font/montserrat_medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/day2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <Button
-        android:id="@+id/day4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/montserrat_bold"
-        android:paddingHorizontal="30dp"
-        android:paddingVertical="15dp"
-        android:text="Day 4"
-        android:textColor="@color/light"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/day3" />
+
 </android.support.constraint.ConstraintLayout>

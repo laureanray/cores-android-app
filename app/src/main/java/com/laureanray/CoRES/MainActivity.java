@@ -39,6 +39,24 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
+    protected void onPostResume() {
+        Log.d("ON", "Post Resume");
+        super.onPostResume();
+    }
+
+
+    @Override
+    protected void onResume() {
+        if(dialog != null){
+            dialog.dismiss();
+        }
+
+
+        Log.d("ON", "Resume");
+        super.onResume();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -86,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     public void login(View view){
         Log.d("MAIN_ACTIVITY", "Login Clicked");
         dialog = ProgressDialog.show(MainActivity.this, "",
-                "Loading. Please wait...", true);
+                "Logging In... Teka lang. ", false);
         final EditText email = findViewById(R.id.email);
         final EditText password = findViewById(R.id.password);
         final EditText ip = findViewById(R.id.ip);
