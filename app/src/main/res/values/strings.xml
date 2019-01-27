@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CoRES 2019</string>
+    <string name="loginString">Log In</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="copyrightText">Copyright © CoRES 2019 · Laurean Ray</string>
+    <string name="loginText">Admin Log In</string>
+    <string name="selectText">Select Day</string>
+    <string name="selectButtonText">Select</string>
+    <string name="scan_again">Scan Again</string>
+    <string-array name="seminars">
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+        <item> Seminar 1 </item>
+    </string-array>
+</resources>
