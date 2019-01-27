@@ -195,23 +195,50 @@ public class ScanActivity extends AppCompatActivity {
 //        createCameraSource();
 
 
-        String seminarOrWorkshop = stringParser(toScan);
+        final String seminarOrWorkshopString = stringParser(toScan);
 
-        if(!seminarOrWorkshop.equals("NULL")) {
+        if(!seminarOrWorkshopString.equals("NULL")) {
 
             RequestQueue requestQueue = Volley.newRequestQueue(this);
-            String URL = "http://" + MainActivity.IPADDRESS + "/admin/" + API_KEY + '/' + _id.trim() + '/' + seminarOrWorkshop;
+            String URL = "http://" + MainActivity.IPADDRESS + "/admin/" + API_KEY + '/' + _id.trim() + '/' + seminarOrWorkshopString;
 
             Log.d("URL", URL);
             StringRequest postRequest = new StringRequest(Request.Method.POST, URL,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
+
+                            final TextView name = findViewById(R.id.name);
+                            final TextView school = findViewById(R.id.school);
+                            final TextView seminarOrWorkshop = findViewById(R.id.seminarOrWorkshopWelcome);
+                            final TextView welcomeText = findViewById(R.id.welcomeText);
+
                             // response
                             Log.d("Response", response);
                             Gson gson = new Gson();
-                            JsonObject jsonObject = gson.fromJson(response, JsonObject.class);
+                            final JsonObject jsonObject = gson.fromJson(response, JsonObject.class);
                             Log.d("STATUS", jsonObject.get("status").toString());
+
+                            Log.d("DATA", jsonObject.get("firstName").toString());
+
+                            if(Integer.parseInt(jsonObject.get("status").toString()) == 200){
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+
+
+                                        name.setText(jsonObject.get("firstName").toString().replaceAll("\"", "") + ' ' +
+                                                     jsonObject.get("lastName").toString().replaceAll("\"", ""));
+                                        school.setText(jsonObject.get("school").toString().replaceAll("\"", ""));
+                                        seminarOrWorkshop.setText(toScan);
+                                        // ANIMATOION
+                                        name.animate().alpha(1.0f).setDuration(500);
+                                        school.animate().alpha(1.0f).setDuration(500);
+                                        seminarOrWorkshop.animate().alpha(1.0f).setDuration(500);
+                                        welcomeText.animate().alpha(1.0f).setDuration(500);
+                                    }
+                                });
+                            }
 //                            if (jsonObject.get("status").toString().equals("\"success\"")) {
 //
 //                            } else {
