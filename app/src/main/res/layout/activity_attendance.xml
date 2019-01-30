@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.laureanray.CoRES.AttendanceActivity">
+
+    <RadioGroup
+        android:id="@+id/seminarRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/nextButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/zero_human_interface_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Zero Human Interface" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Blockchain" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Robotic Process Automation" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Web Developer Skillset" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VR Engineering" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Software-Defined Architecture" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Game Development" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5G Network" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3D Metal Printing" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cyber Defense" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Salesforce Marketing Cloud" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cloud Auto ML" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ethical Hacking" />
+
+        <RadioButton
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="18sp"
+            android:id="@+id/blockchain_Button14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Digital Twin" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/montserrat_bold"
+        android:onClick="next"
+        android:text="Next"
+        android:textColor="@color/light"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

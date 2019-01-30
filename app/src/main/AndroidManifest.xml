@@ -11,6 +11,7 @@
         android:required="true" />
 
     <application
+        android:name=".CoresApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,22 +19,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Day4Select"></activity>
-        <activity android:name=".Day3Select" />
-        <activity android:name=".Day2Select" />
-        <activity android:name=".Day1Select" />
-        <activity android:name=".QRScanResultActivity" />
+        <activity android:name=".ScanActivity"></activity>
+        <activity android:name=".ScanIDCheckActivity" />
+        <activity android:name=".ScanAttendanceActivity" />
+        <activity android:name=".AttendanceActivity" />
+        <activity android:name=".DashboardActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ScanActivity" />
-        <activity android:name=".SelectDayActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
     </application>
