@@ -10,28 +10,40 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-
+import android.widget.TextView;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
-
 import java.io.IOException;
 
 public class ScanActivity extends AppCompatActivity {
 
     SurfaceView cameraPreview;
+
+   private static String seminarName;
+
+
+    public static  void setSeminarName(String name) {
+        seminarName = name;
+    }
+
     private static final String TAG = "ScanActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
 
+        TextView textView = findViewById(R.id.seminarName);
+        textView.setText(seminarName);
         cameraPreview = findViewById(R.id.camera_preview);
         createCameraSource();
-        Log.d(TAG, "onCreate: ");
+        Log.d(TAG, "onCreate: " + seminarName);
     }
+
+
+
 
     public void createCameraSource() {
         Log.d(TAG, "createCameraSource: ");

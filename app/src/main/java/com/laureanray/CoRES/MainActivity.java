@@ -76,7 +76,10 @@ public class MainActivity extends AppCompatActivity {
                 button.animate().alpha(0).setDuration(400);
             }
         });
+
     }
+
+
 
     private void FI_LOGIN(){
         final ProgressBar bar = findViewById(R.id.loginProgressBar);

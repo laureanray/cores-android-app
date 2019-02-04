@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -53,7 +54,7 @@ public class ScanAttendanceActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity( new Intent(this, AttendanceActivity.class) );
+        startActivity(new Intent(this, AttendanceActivity.class));
         finish();
         Log.d(TAG, "onBackPressed: ");
     }
@@ -61,7 +62,9 @@ public class ScanAttendanceActivity extends AppCompatActivity {
     public void scan(View view){
         Intent intent = new Intent(this, ScanActivity.class);
         startActivityForResult(intent, 0);
+        ScanActivity.setSeminarName(seminar);
         textView.setText("");
+
         Log.d(TAG, "scan: ");
     }
 
@@ -101,7 +104,7 @@ public class ScanAttendanceActivity extends AppCompatActivity {
             }
         });
         if(status == 200){
-            // ok
+            // ok 
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -112,7 +115,7 @@ public class ScanAttendanceActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    textView.setText("ERROR");
+                    textView.setText("NOT REGISTERED");
                 }
             });
             // not exist
@@ -120,16 +123,28 @@ public class ScanAttendanceActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    textView.setText("WARNING");
+                    textView.setText("ALREADY REGISTERED");
                 }
             });
         }else if(status == 404){
+            Toast toast = Toast.makeText(getApplicationContext(), "Please go to information desk", Toast.LENGTH_LONG);
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     textView.setText("NOT FOUND");
                 }
             });
+        }else if(status == 900){
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    textView.setText("CHECK WIFI/SERVER");
+                }
+            });
+            Toast toast = Toast.makeText(getApplicationContext(), "Please turn on the wifi and connect to the laptop server. ", Toast.LENGTH_LONG);
+
+
         }else{
             runOnUiThread(new Runnable() {
                 @Override
@@ -137,6 +152,8 @@ public class ScanAttendanceActivity extends AppCompatActivity {
                     textView.setText("UNKNOWN");
                 }
             });
+            Toast toast = Toast.makeText(getApplicationContext(), "Please go the server peeps. ", Toast.LENGTH_LONG);
+
         }
     }
 
@@ -195,11 +212,10 @@ public class ScanAttendanceActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Log.d(TAG, "onErrorResponse: " + error.toString());
+                        onResponsePOST(900);
                     }
                 });
-
-
         requestQueue.add(postRequest);
         System.gc();
     }

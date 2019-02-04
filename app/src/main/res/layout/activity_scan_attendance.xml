@@ -7,7 +7,7 @@
     tools:context="com.laureanray.CoRES.ScanAttendanceActivity">
 
     <Button
-        android:id="@+id/scan_attendance_Button"
+        android:id="@+id/scan_attendance_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -50,8 +50,9 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/colorPrimary"
-        android:textSize="65sp"
-        app:layout_constraintBottom_toTopOf="@+id/scan_attendance_Button"
+        android:textSize="50sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/scan_attendance_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -74,13 +75,18 @@
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="138dp"
         android:layout_marginStart="24dp"
-        android:alpha="0"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:alpha="0"
         android:fontFamily="@font/montserrat_bold"
+        android:text="asda"
         android:textColor="@color/colorPrimary"
-        android:textSize="38sp"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seminar" />
+
 </android.support.constraint.ConstraintLayout>

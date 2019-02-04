@@ -6,4 +6,188 @@
     android:layout_height="match_parent"
     tools:context="com.laureanray.CoRES.ScanIDCheckActivity">
 
+    <Button
+        android:id="@+id/scan_id_check_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_button"
+        android:alpha="1 "
+        android:fontFamily="@font/montserrat_bold"
+        android:onClick="scan"
+        android:paddingVertical="12dp"
+        android:text="SCAN"
+        android:textColor="@color/light"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Check ID"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/statusCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="65sp"
+        app:layout_constraintBottom_toTopOf="@+id/scan_attendance_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+    <TextView
+        android:id="@+id/name_check"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:alpha="0"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="sds"
+        android:textColor="@color/colorAccent"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/school_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:alpha="0"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="TextView"
+        android:textColor="#202020"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_check" />
+
+    <TextView
+        android:id="@+id/cys_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:alpha="0"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="TextView"
+        android:textColor="#202020"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/school_check" />
+
+    <TextView
+        android:id="@+id/email_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:alpha="0"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="asdad"
+        android:textColor="#202020"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cys_check" />
+
+    <TextView
+        android:id="@+id/mobile_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:alpha="0"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="asdasda"
+        android:textColor="#202020"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_check" />
+
+    <TextView
+        android:id="@+id/seminar_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0"
+        android:text="seminarCheck"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="16sp"
+        android:textColor="#202020"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seminarTitle" />
+
+    <TextView
+        android:id="@+id/seminarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Seminar"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mobile_check" />
+
+    <TextView
+        android:id="@+id/workshopTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Workshop"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seminar_check" />
+
+    <TextView
+        android:id="@+id/workshop_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="0"
+        android:text="workshopCheck"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="16sp"
+        android:textColor="#202020"
+        app:layout_constraintStart_toStartOf="@+id/workshopTitle"
+        app:layout_constraintTop_toBottomOf="@+id/workshopTitle" />
+
+
 </android.support.constraint.ConstraintLayout>
